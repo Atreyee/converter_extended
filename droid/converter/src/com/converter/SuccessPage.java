@@ -22,6 +22,8 @@ import java.lang.String;
 import java.lang.ThreadGroup;
 import java.util.concurrent.CountDownLatch;
 import com.calatrava.bridge.PageRegistry;
+import org.json.JSONObject;
+import org.json.JSONException;
 
 @CalatravaPage(name = "successPage")
 public class SuccessPage extends RegisteredActivity
@@ -31,6 +33,7 @@ public class SuccessPage extends RegisteredActivity
   {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.form);
+    PageRegistry.sharedRegistry().registerPage(getPageName(), this);
     PageRegistry.sharedRegistry().pageOnscreen(getPageName());
   }
 
@@ -39,8 +42,16 @@ public class SuccessPage extends RegisteredActivity
   }
 
   public void render(final String json) {
-    Log.d(SuccessPage.class.getSimpleName(), "render page: " + getPageName());
-    ((TextView)findViewById(R.id.result)).setText("json");
+    String result = null;
+    try{
+      result = (new JSONObject(json)).getString("result");
+    }
+    catch(Exception e)
+    {
+
+    }
+    Log.d(SuccessPage.class.getSimpleName(), "rendering" + result);
+    ((TextView)findViewById(R.id.result)).setText(result);
   }
 
   public String getFieldValue(String field){
