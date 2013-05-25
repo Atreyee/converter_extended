@@ -12,6 +12,7 @@ calatrava.pageView.successPage = ->
 
   render: (message) ->
     console.log('rendering...', message)
+    $("#result").val(message["result"])
 
   get: (field) ->
     console.log('getting...', field)

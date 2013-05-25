@@ -23,6 +23,8 @@ example.converter.controller = ({views, changePage, ajax}) ->
     inRate = currencyRate[inCurrency]
     views.conversionForm.render
       out_amount: (Math.round(amount * (outRate / inRate) * 100)) / 100
+    views.successPage.render
+      result: (Math.round(amount * (outRate / inRate) * 100)) / 100
     calatrava.bridge.changePage('successPage')
 
   convert = () ->

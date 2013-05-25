@@ -72,7 +72,7 @@ public class PageRegistry {
     Log.d(TAG, "Attaching proxy '" + proxyId + "' to name '" + pageName + "'");
     proxyByPage.put(pageName, proxyId);
   }
-  
+
   public void changePage(String target) {
     Log.d(TAG, "changePage('" + target + "')");
     Class activityClass = pageFactories.get(target);
@@ -187,8 +187,10 @@ public class PageRegistry {
 
     public void render(String renderJson) {
       if (activity != null && onScreen) {
+        Log.d(TAG, "rendering" + renderJson);
         activity.render(renderJson);
       } else {
+        Log.d(TAG, "pending" + renderJson);
         pendingRenders.add(renderJson);
       }
     }

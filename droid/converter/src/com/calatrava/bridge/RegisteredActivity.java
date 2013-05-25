@@ -54,7 +54,7 @@ public abstract class RegisteredActivity extends Activity {
   public void triggerEvent(String event, String... extraArgs) {
     PageRegistry.sharedRegistry().triggerEvent(getPageName(), event, extraArgs);
   }
-  
+
   public void invokeWidgetCallback(String...args) {
     rhino.callJsFunction("calatrava.inbound.invokeCallback", args);
   }
