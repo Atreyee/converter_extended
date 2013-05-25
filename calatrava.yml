@@ -1,0 +1,6 @@
+---
+:project_name: converter
+:platforms:
+- ios
+- droid
+- web

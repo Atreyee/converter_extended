@@ -1,0 +1,12 @@
+# view AndroidManifest.xml #generated:8
+-keep class com.converter.Bootstrap { <init>(...); }
+
+# view AndroidManifest.xml #generated:15
+-keep class com.converter.ConversionForm { <init>(...); }
+
+# view AndroidManifest.xml #generated:6
+-keep class com.converter.Converter { <init>(...); }
+
+# view AndroidManifest.xml #generated:18
+-keep class com.converter.SuccessPage { <init>(...); }
+
