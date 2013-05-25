@@ -1,0 +1,7 @@
+.idea/
+artifacts/
+droid/converter/ant
+droid/converter/assets/
+droid/converter/bin
+web/apache/logs
+web/public
